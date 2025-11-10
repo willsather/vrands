@@ -8,7 +8,9 @@
     "lint": "biome check",
     "lint:fix": "biome check --write",
     "bose": "turbo --filter @brands/bose",
+    "jetblue": "turbo --filter @brands/jetblue",
     "mongodb": "turbo --filter @brands/mongodb",
+    "techcrunch": "turbo --filter @brands/techcrunch",
     "vermes": "turbo --filter @brands/vermes",
     "site": "turbo --filter @brands/site"
   },

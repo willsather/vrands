@@ -15,7 +15,9 @@ pnpm lint:fix         # Auto-fix linting issues
 
 # App-specific commands using Turbo filters
 pnpm bose             # Target @brands/bose app
+pnpm jetblue          # Target @brands/jetblue app  
 pnpm mongodb          # Target @brands/mongodb app  
+pnpm techcrunch       # Target @brands/techcrunch app  
 pnpm vermes           # Target @brands/vermes app
 
 # Individual app development (from apps/[name]/)
@@ -44,7 +46,7 @@ This Turborepo monorepo contains brand website clones showcasing Next.js and Ver
    - Rewrites all URLs to include this context
 
 **Structure:**
-- `/apps` - Three Next.js apps (bose, mongodb, vermes)
+- `/apps` - Three Next.js apps (bose, jetblue, mongodb, techcrunch, hermes)
 - `/packages/ui` - Shared shadcn/ui components  
 - `/packages/config` - Shared TypeScript/Vitest configs
 
