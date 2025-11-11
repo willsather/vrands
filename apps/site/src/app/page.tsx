@@ -13,9 +13,7 @@ const sites = [
       "Technology news platform clone showcasing Next.js modern features and responsive design",
     logo: TechcrunchLogo,
     brandColor: "bg-[#008C00]",
-    technologies: [
-      { icon: "/nextjs.svg" },
-    ],
+    technologies: [{ icon: "/nextjs.svg" }],
   },
   {
     name: "JetBlue",
@@ -24,9 +22,7 @@ const sites = [
       "Airline website clone featuring booking flow, flight search, and customer portal functionality",
     logo: JetblueLogo,
     brandColor: "bg-[#00205B]",
-    technologies: [
-      { icon: "/nextjs.svg" },
-    ],
+    technologies: [{ icon: "/nextjs.svg" }],
   },
   {
     name: "MongoDB",
@@ -73,14 +69,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-2 font-sans">
+        <div className="mb-12 text-center">
+          <h1 className="mb-2 font-bold font-sans text-4xl text-white">
             brand demos
           </h1>
-          <p className="text-zinc-400 text-sm font-mono">
+          <p className="font-mono text-sm text-zinc-400">
             by{" "}
-            <Link 
-              href="https://sather.ws" 
+            <Link
+              href="https://sather.ws"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
@@ -89,7 +85,7 @@ export default function Home() {
             </Link>
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {sites.map((site) => {
             const LogoComponent = site.logo;
@@ -101,18 +97,18 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group block"
               >
-                <div className="overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950 transition-all duration-300 hover:shadow-xl hover:shadow-zinc-500/20 flex flex-col h-full">
+                <div className="flex h-full flex-col overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950 transition-all duration-300 hover:shadow-xl hover:shadow-zinc-500/20">
                   <div
-                    className={`flex h-32 items-center justify-center ${site.brandColor} border-zinc-800 border-b flex-shrink-0`}
+                    className={`flex h-32 items-center justify-center ${site.brandColor} flex-shrink-0 border-zinc-800 border-b`}
                   >
                     <LogoComponent className="h-12 w-32 text-white" />
                   </div>
-                  <div className="bg-zinc-900 px-6 pt-6 pb-6 flex flex-col flex-grow">
+                  <div className="flex flex-grow flex-col bg-zinc-900 px-6 pt-6 pb-6">
                     <p className="text-left text-sm text-zinc-300 leading-relaxed">
                       {site.description}
                     </p>
 
-                    <div className="flex gap-2 mt-auto pt-6">
+                    <div className="mt-auto flex gap-2 pt-6">
                       {site.technologies.map((tech) => (
                         <img
                           key={tech.icon}
