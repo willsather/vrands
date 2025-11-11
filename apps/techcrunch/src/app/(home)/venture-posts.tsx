@@ -28,9 +28,11 @@ export default async function VenturePostsSection() {
         </div>
 
         {/* Featured Article (Always on Top) */}
-        <div className="mb-8">
-          <PostCard post={featuredPost} />
-        </div>
+        {featuredPost != null ? (
+          <div className="mb-8">
+            <PostCard post={featuredPost} />
+          </div>
+        ) : null}
 
         {/* Other Posts List (Always Below Featured) */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

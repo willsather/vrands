@@ -1,4 +1,4 @@
-import { type ZodSchema, z } from "zod";
+import { type ZodSchema, z } from "zod/v3";
 
 export function createEnv(schema: ZodSchema) {
   try {

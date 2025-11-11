@@ -1,8 +1,9 @@
 import path from "node:path";
+import { uiConfig } from "@brands/vitest-config/ui";
 import react from "@vitejs/plugin-react-swc";
-import { configDefaults, defineConfig } from "vitest/config";
+import { configDefaults, mergeConfig } from "vitest/config";
 
-export default defineConfig({
+export default mergeConfig(uiConfig, {
   plugins: [react()],
   test: {
     ...configDefaults,

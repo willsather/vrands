@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "next": "^15.4.2-canary.56",
-    "zod": "^3.25.76"
+    "zod": "^4.0.17"
   },
   "devDependencies": {
     "@brands/vitest-config": "workspace:*",
