@@ -1,9 +1,33 @@
 import { BoseLogo } from "@/components/bose-logo";
 import { HermesLogo } from "@/components/hermes-logo";
+import { JetblueLogo } from "@/components/jetblue-logo";
 import { MongoDBLogo } from "@/components/mongodb-logo";
+import { TechcrunchLogo } from "@/components/techcrunch-logo";
 import Link from "next/link";
 
 const sites = [
+  {
+    name: "TechCrunch",
+    url: "https://vechcrunch.vercel.app/",
+    description:
+      "Technology news platform clone showcasing Next.js modern features and responsive design",
+    logo: TechcrunchLogo,
+    brandColor: "bg-[#008C00]",
+    technologies: [
+      { icon: "/nextjs.svg" },
+    ],
+  },
+  {
+    name: "JetBlue",
+    url: "https://vetblue.vercel.app/",
+    description:
+      "Airline website clone featuring booking flow, flight search, and customer portal functionality",
+    logo: JetblueLogo,
+    brandColor: "bg-[#00205B]",
+    technologies: [
+      { icon: "/nextjs.svg" },
+    ],
+  },
   {
     name: "MongoDB",
     url: "https://vongodb.vercel.app",
