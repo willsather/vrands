@@ -9,6 +9,8 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@brands/ui": "workspace:*",
+    "@brands/utils": "workspace:*",
     "@hookform/resolvers": "^4.1.0",
     "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.2",

@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@brands/ui/components/button";
 
 export default function VacationSection() {
   return (

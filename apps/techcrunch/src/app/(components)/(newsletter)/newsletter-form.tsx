@@ -14,11 +14,11 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/ui/form";
-import { Input } from "@/ui/input";
+} from "@brands/ui/components/form";
+import { Input } from "@brands/ui/components/input";
 
 export const newsletterSchema = z.object({
-  email: z.string().email({ message: "Invalid email address" }),
+  email: z.email({ message: "Invalid email address" }),
 });
 
 export default function NewsletterForm() {

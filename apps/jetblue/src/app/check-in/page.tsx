@@ -2,9 +2,9 @@ import { ChevronRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Button } from "@brands/ui/components/button";
+import { Input } from "@brands/ui/components/input";
+import { Label } from "@brands/ui/components/label";
 
 export const metadata: Metadata = {
   title: "Check In",

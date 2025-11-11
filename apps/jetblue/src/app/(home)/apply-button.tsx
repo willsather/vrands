@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@brands/ui/components/button";
 import { track } from "@vercel/analytics";
 
 export default function ApplyButton() {

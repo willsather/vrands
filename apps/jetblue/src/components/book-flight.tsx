@@ -1,21 +1,21 @@
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
+import { Button } from "@brands/ui/components/button";
+import { Calendar } from "@brands/ui/components/calendar";
+import { Checkbox } from "@brands/ui/components/checkbox";
+import { Input } from "@brands/ui/components/input";
+import { Label } from "@brands/ui/components/label";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "@brands/ui/components/popover";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { cn } from "@/lib/utils";
+} from "@brands/ui/components/select";
 
 export default function FlightSearchCompact() {
   return (
