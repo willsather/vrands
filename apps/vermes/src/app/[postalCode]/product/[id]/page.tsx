@@ -8,8 +8,6 @@ import {
 } from "@/components/perfect-partner";
 import { getProduct, getProducts } from "@/lib/products";
 
-export const experimental_ppr = true;
-
 export async function generateStaticParams() {
   const products = await getProducts();
 

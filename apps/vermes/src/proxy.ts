@@ -1,7 +1,7 @@
 import { getPostalCode } from "@brands/utils";
 import { type NextRequest, NextResponse } from "next/server";
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // skip next.js internal paths and public files

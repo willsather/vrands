@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
     ];
   },
   experimental: {
-    ppr: true,
     inlineCss: true,
   },
   images: {

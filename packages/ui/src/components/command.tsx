@@ -10,7 +10,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from ".//dialog";
+} from "./dialog";
 import { cn } from "../lib/utils";
 
 function Command({

@@ -14,19 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-/*
- * DEMO: Partial Pre-Rendering
- *
- * Automatically render static components immediately
- * while dynamic components load.
- *
- * This is incredibly helpful when needing to load
- * almost an entire page even though only a small piece
- * of the page is dynamic (think of a dashboard loading
- * tons of data, can still load the nav/header/skeletons)
- */
-export const experimental_ppr = true;
-
 export default async function SearchPage(props: {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {

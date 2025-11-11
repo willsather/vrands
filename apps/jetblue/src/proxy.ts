@@ -4,7 +4,7 @@ import { type NextRequest, NextResponse } from "next/server";
 
 export const config = { matcher: ["/"] };
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const code = await precompute(homeFlags);
 
   const nextUrl = new URL(
