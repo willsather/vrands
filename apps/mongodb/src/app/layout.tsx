@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Source_Code_Pro } from "next/font/google";
 import localFont from "next/font/local";
 import type React from "react";
+import { Suspense } from "react";
 
 import "@/app/globals.css";
 
@@ -69,7 +70,7 @@ export default function RootLayout({
       <body
         className={`${euclid.variable} ${mongoDBSerif.variable} ${sourceCodePro.variable} font-sans`}
       >
-        {children}
+        <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
         <SpeedInsights />
         {process.env.NODE_ENV === "development" && <VercelToolbar />}

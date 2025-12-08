@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 
-import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
-import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
 import PopularPosts from "@/app/(components)/popular-posts";
 import StartupsPostList from "@/app/startups/startups-post-list";
 
@@ -16,9 +13,6 @@ export const metadata: Metadata = {
       "Read more about tech startup news that breaks down funding, growth, and long-term trajectory of companies across every stage and industry.",
   },
 };
-
-export const dynamic = "force-static";
-export const revalidate = 60;
 
 export default async function StartupsPage() {
   return (
@@ -39,14 +33,10 @@ export default async function StartupsPage() {
 
       <div className="grid gap-8 lg:grid-cols-12">
         {/* Popular Posts Sidebar */}
-        <Suspense fallback={<PopularPostsSkeleton />}>
-          <PopularPosts />
-        </Suspense>
+        <PopularPosts />
 
         {/* Main Content */}
-        <Suspense fallback={<PostListSkeleton />}>
-          <StartupsPostList />
-        </Suspense>
+        <StartupsPostList />
       </div>
     </div>
   );

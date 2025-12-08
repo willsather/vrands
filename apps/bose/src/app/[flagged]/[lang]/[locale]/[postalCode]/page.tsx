@@ -7,10 +7,6 @@ import { getProducts } from "@/lib/product";
 import { LangSchema, LocaleSchema } from "@brands/utils";
 import { deserialize } from "flags/next";
 
-export function generateStaticParams() {
-  return [];
-}
-
 export default async function Home({
   params,
 }: {

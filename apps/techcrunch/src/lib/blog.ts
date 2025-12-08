@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import { z } from "zod";
 
 import {
@@ -31,6 +32,12 @@ export async function getPosts(options?: {
   name?: string;
   category?: "latest" | "popular" | string;
 }): Promise<Post[]> {
+  "use cache";
+  cacheLife({
+    stale: 30,
+    revalidate: 60,
+    expire: 120,
+  });
   if (options?.name != null) {
     return await fetchPosts({ name: options.name });
   }

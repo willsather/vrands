@@ -14,6 +14,7 @@ export async function PostListItem({
   post,
   theme = "default",
 }: PostListItemProps) {
+  const showInBrief = await inBriefFlag();
   const defaultStyles = {
     textColor: "text-tc-green",
     borderColor: "border-gray-300",
@@ -27,8 +28,6 @@ export async function PostListItem({
   };
 
   const styles = theme === "alternate" ? alternateStyles : defaultStyles;
-
-  const showInBrief = await inBriefFlag();
 
   return (
     <article>

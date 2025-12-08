@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 
-import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
-import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
 import PopularPosts from "@/app/(components)/popular-posts";
 import AppsPostList from "@/app/apps/apps-post-list";
 
@@ -16,9 +13,6 @@ export const metadata: Metadata = {
       "As the app economy continues to grow, both on iOS and Google Play stores, TechCrunch covers the latest app news and updates across both digital storefronts.",
   },
 };
-
-export const dynamic = "force-static";
-export const revalidate = 60;
 
 export default async function AppsPage() {
   return (
@@ -40,14 +34,10 @@ export default async function AppsPage() {
 
       <div className="grid gap-8 lg:grid-cols-12">
         {/* Popular Posts Sidebar */}
-        <Suspense fallback={<PopularPostsSkeleton />}>
-          <PopularPosts />
-        </Suspense>
+        <PopularPosts />
 
         {/* Main Content */}
-        <Suspense fallback={<PostListSkeleton />}>
-          <AppsPostList />
-        </Suspense>
+        <AppsPostList />
       </div>
     </div>
   );

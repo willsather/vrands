@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { type FlagValuesType, encrypt } from "flags";
 import { generatePermutations } from "flags/next";
 import { deserialize } from "flags/next";
@@ -7,16 +8,15 @@ import { type ReactNode, Suspense } from "react";
 import { homeFlags } from "@/lib/flags";
 
 async function ConfidentialFlagValues({ values }: { values: FlagValuesType }) {
+  await connection();
   const encryptedFlagValues = await encrypt(values);
   return <FlagValues values={encryptedFlagValues} />;
 }
 
 export async function generateStaticParams() {
-  return [];
-
   // generate permutations for pages to be built at build time
-  // const codes = await generatePermutations(homeFlags);
-  // return codes.map((code) => ({ code }));
+  const codes = await generatePermutations(homeFlags);
+  return codes.map((code) => ({ code }));
 }
 
 export default async function HomeLayout({

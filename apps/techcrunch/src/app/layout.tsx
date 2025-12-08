@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Suspense } from "react";
 
 import Footer from "@/app/(components)/footer";
 import Header from "@/app/(components)/header";
@@ -73,8 +74,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        {children}
-        <Footer />
+        <Suspense fallback={null}>{children}</Suspense>
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
 
         {/*DEMO: Vercel Analytics/Speed Insights SDK Packages for reporting*/}
         <Analytics />

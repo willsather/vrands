@@ -4,6 +4,7 @@ import { VercelToolbar } from "@vercel/toolbar/next";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import type React from "react";
+import { Suspense } from "react";
 
 import { CartProvider } from "@/components/cart-provider";
 
@@ -73,7 +74,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bose.variable} ${boseHeadline.variable} font-sans`}>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          <Suspense fallback={null}>{children}</Suspense>
+        </CartProvider>
         <Analytics />
         <SpeedInsights />
         {process.env.NODE_ENV === "development" && <VercelToolbar />}

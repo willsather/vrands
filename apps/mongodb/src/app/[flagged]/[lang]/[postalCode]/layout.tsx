@@ -40,7 +40,7 @@ export default async function LocaleLayout({
 
       <div className="pt-12">
         <Navbar lang={validLang} />
-        {children}
+        <Suspense fallback={null}>{children}</Suspense>
         <Footer lang={validLang} />
       </div>
 

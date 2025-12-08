@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 
-import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
-import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
 import PopularPosts from "@/app/(components)/popular-posts";
 import AIPostList from "@/app/ai/ai-post-list";
 
@@ -16,9 +13,6 @@ export const metadata: Metadata = {
       "Read the latest on artificial intelligence and machine learning tech, the companies that are building them, and the ethical issues AI raises today.",
   },
 };
-
-export const dynamic = "force-static";
-export const revalidate = 60;
 
 export default async function AIPage() {
   return (
@@ -40,14 +34,10 @@ export default async function AIPage() {
 
       <div className="grid gap-8 lg:grid-cols-12">
         {/* Popular Posts Sidebar */}
-        <Suspense fallback={<PopularPostsSkeleton />}>
-          <PopularPosts />
-        </Suspense>
+        <PopularPosts />
 
         {/* Main Content */}
-        <Suspense fallback={<PostListSkeleton />}>
-          <AIPostList />
-        </Suspense>
+        <AIPostList />
       </div>
     </div>
   );

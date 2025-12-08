@@ -5,9 +5,6 @@ import TitleSection from "@/app/(home)/title";
 import UpcomingEvents from "@/app/(home)/upcoming-events";
 import VenturePostsSection from "@/app/(home)/venture-posts";
 
-export const dynamic = "force-static";
-export const revalidate = 60;
-
 /*
  * DEMO: Pages
  *

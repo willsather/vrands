@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 
-import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
-import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
 import PopularPosts from "@/app/(components)/popular-posts";
 import VenturePostList from "@/app/venture/venture-post-list";
 
@@ -16,9 +13,6 @@ export const metadata: Metadata = {
       "Venture capital news and coverage feature all the VCs, VC-backed startups, and investment trends that founders, investors, and students should be tracking.",
   },
 };
-
-export const dynamic = "force-static";
-export const revalidate = 60;
 
 export default async function VenturePage() {
   return (
@@ -40,14 +34,10 @@ export default async function VenturePage() {
 
       <div className="grid gap-8 lg:grid-cols-12">
         {/* Popular Posts Sidebar */}
-        <Suspense fallback={<PopularPostsSkeleton />}>
-          <PopularPosts />
-        </Suspense>
+        <PopularPosts />
 
         {/* Main Content */}
-        <Suspense fallback={<PostListSkeleton />}>
-          <VenturePostList />
-        </Suspense>
+        <VenturePostList />
       </div>
     </div>
   );

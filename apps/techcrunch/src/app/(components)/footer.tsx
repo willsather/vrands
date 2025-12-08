@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import Link from "next/link";
 
 import NewsletterForm from "@/app/(components)/(newsletter)/newsletter-form";
@@ -8,7 +9,9 @@ import { TechCrunchLogo } from "@/icons/logo";
 import { RSSIcon } from "@/icons/rss-icon";
 import { TwitterIcon } from "@/icons/twitter-icon";
 
-export default function Footer() {
+export default async function Footer() {
+  "use cache";
+  cacheLife("days");
   const socialLinks = [
     {
       link: "https://twitter.com/techcrunch",

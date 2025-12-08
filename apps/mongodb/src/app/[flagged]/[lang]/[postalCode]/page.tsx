@@ -4,10 +4,6 @@ import { flags } from "@/lib/flags";
 import { LangSchema } from "@brands/utils";
 import { deserialize } from "flags/next";
 
-export function generateStaticParams() {
-  return [];
-}
-
 export default async function Home({
   params,
 }: {

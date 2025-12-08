@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import Link from "next/link";
 
 import { ArrowIcon } from "@/icons/arrow-icon";
@@ -39,6 +40,8 @@ function Event({
 }
 
 export default async function UpcomingEvents() {
+  "use cache";
+  cacheLife("max");
   const events = [
     {
       title: "StrictlyVC San Francisco 2025",

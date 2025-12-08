@@ -35,7 +35,7 @@ export default async function LocaleLayout({
   const validLocale = LocaleSchema.parse(locale);
 
   return (
-    <>
+    <Suspense fallback={null}>
       <PromotionalBanner text={decisions["banner-text-variation"]} />
 
       <div className="pt-12">
@@ -47,6 +47,6 @@ export default async function LocaleLayout({
       <Suspense fallback={null}>
         <ConfidentialFlagValues values={decisions} />
       </Suspense>
-    </>
+    </Suspense>
   );
 }

@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Suspense } from "react";
 
 import Footer from "@/components/footer";
 import Header from "@/components/header";
@@ -56,7 +57,7 @@ export default function RootLayout({
       <body>
         <Header />
 
-        {children}
+        <Suspense fallback={null}>{children}</Suspense>
 
         <Footer />
 

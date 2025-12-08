@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { Suspense } from "react";
 
 import CollapsibleFooter from "@/components/collapsible-footer";
 import Footer from "@/components/footer";
@@ -30,7 +31,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-background`}>
         <Navbar />
 
-        {children}
+        <Suspense fallback={null}>{children}</Suspense>
 
         <CollapsibleFooter />
         <Footer />
