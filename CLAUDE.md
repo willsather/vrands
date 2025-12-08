@@ -14,11 +14,11 @@ pnpm lint             # Biome linter
 pnpm lint:fix         # Auto-fix linting issues
 
 # App-specific commands using Turbo filters
-pnpm bose             # Target @brands/bose app
-pnpm jetblue          # Target @brands/jetblue app  
-pnpm mongodb          # Target @brands/mongodb app  
-pnpm techcrunch       # Target @brands/techcrunch app  
-pnpm vermes           # Target @brands/vermes app
+pnpm bose             # Target @vrands/bose app
+pnpm jetblue          # Target @vrands/jetblue app  
+pnpm mongodb          # Target @vrands/mongodb app  
+pnpm techcrunch       # Target @vrands/techcrunch app  
+pnpm vermes           # Target @vrands/vermes app
 
 # Individual app development (from apps/[name]/)
 pnpm dev              # Start single app (ports: mongodb=3000, vermes=3001, bose=3002)

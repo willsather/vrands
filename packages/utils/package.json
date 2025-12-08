@@ -1,5 +1,5 @@
 {
-  "name": "@brands/utils",
+  "name": "@vrands/utils",
   "version": "0.0.0",
   "private": true,
   "module": "dist/index.mjs",
@@ -18,8 +18,8 @@
     "zod": "^4.0.17"
   },
   "devDependencies": {
-    "@brands/vitest-config": "workspace:*",
-    "@brands/typescript-config": "workspace:*",
+    "@vrands/vitest-config": "workspace:*",
+    "@vrands/typescript-config": "workspace:*",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
     "vitest": "3.2.4"

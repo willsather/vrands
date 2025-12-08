@@ -20,7 +20,7 @@
       "persistent": true
     },
     "test": {
-      "dependsOn": ["@brands/vitest-config#build"]
+      "dependsOn": ["@vrands/vitest-config#build"]
     }
   }
 }

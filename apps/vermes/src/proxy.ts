@@ -1,4 +1,4 @@
-import { getPostalCode } from "@brands/utils";
+import { getPostalCode } from "@vrands/utils";
 import { type NextRequest, NextResponse } from "next/server";
 
 export async function proxy(request: NextRequest) {

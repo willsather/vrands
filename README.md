@@ -37,8 +37,8 @@ In this example, there is a shared package called `ui` which is basic [`shadcn/u
 Located under `/packages/config` is all the shared configuration which the Turborepo uses. This is a great space to put
 handy developer tools and code cleanliness configuration.
 
-- `@brands/vitest-config`: `vitest` configurations for `base` and `ui` configurations
-- `@brands/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `@vrands/vitest-config`: `vitest` configurations for `base` and `ui` configurations
+- `@vrands/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 ## Useful Turborepo Links
 

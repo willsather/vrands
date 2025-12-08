@@ -1,5 +1,5 @@
 import path from "node:path";
-import { uiConfig } from "@brands/vitest-config/ui";
+import { uiConfig } from "@vrands/vitest-config/ui";
 import react from "@vitejs/plugin-react-swc";
 import { configDefaults, mergeConfig } from "vitest/config";
 

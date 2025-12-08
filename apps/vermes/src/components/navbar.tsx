@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Input } from "@brands/ui/components/input";
+import { Input } from "@vrands/ui/components/input";
 import { Logo } from "./logo";
 import MobileNavbar from "./mobile-navbar";
 
