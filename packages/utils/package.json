@@ -14,7 +14,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "next": "^16.0.7",
+    "next": "16.0.10",
     "zod": "^4.0.17"
   },
   "devDependencies": {
