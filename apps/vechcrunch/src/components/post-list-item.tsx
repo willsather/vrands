@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { TimeAgo } from "@/components/time-ago";
@@ -38,10 +39,12 @@ export function PostListItem({
         {/* Thumbnail */}
         <div className="relative block aspect-[563/375] w-[150px] shrink-0 overflow-hidden bg-gray-500">
           {post.image !== "" ? (
-            <img
+            <Image
               src={post.image ?? "/default.png"}
-              alt={post.image}
-              className={`h-full w-full object-cover transition-transform duration-300 ${styles.hoverScale}`}
+              alt={post.title}
+              fill
+              sizes="150px"
+              className={`object-cover transition-transform duration-300 ${styles.hoverScale}`}
             />
           ) : (
             <div className="h-full w-full bg-gray-500" />
