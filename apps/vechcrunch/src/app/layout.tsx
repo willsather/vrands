@@ -7,6 +7,7 @@ import { Suspense } from "react";
 
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import HeaderSkeleton from "@/components/skeletons/header-skeleton";
 
 import "./globals.css";
 
@@ -73,7 +74,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Suspense fallback={null}>
+        <Suspense fallback={<HeaderSkeleton />}>
           <Header />
         </Suspense>
         <Suspense fallback={null}>{children}</Suspense>
