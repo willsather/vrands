@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { connection } from "next/server";
 
 import { FacebookIcon } from "@/icons/facebook-icon";
 import { LinkedInIcon } from "@/icons/linkedin-icon";
@@ -34,7 +33,7 @@ export async function generateStaticParams() {
  * images, text, etc.
  */
 export async function generateMetadata(props: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ flag: string; slug: string }>;
 }): Promise<Metadata> {
   const params = await props.params;
   const post = await getPost(params.slug);
@@ -62,10 +61,9 @@ export async function generateMetadata(props: {
 export default async function BlogPost({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ flag: string; slug: string }>;
 }) {
-  await connection();
-  const slug = (await params).slug;
+  const { slug } = await params;
   const post = await getPost(slug);
 
   if (!post) return notFound();

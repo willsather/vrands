@@ -1,10 +1,12 @@
+import { deserialize } from "flags/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
 import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
 import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
 import PopularPosts from "@/app/(components)/popular-posts";
-import VenturePostList from "@/app/venture/venture-post-list";
+import VenturePostList from "@/app/[flag]/venture/venture-post-list";
+import { flags } from "@/lib/flags";
 
 export const metadata: Metadata = {
   title: "Venture",
@@ -17,7 +19,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function VenturePage() {
+export default async function VenturePage({
+  params,
+}: {
+  params: Promise<{ flag: string }>;
+}) {
+  const { flag } = await params;
+  const decisions = await deserialize(flags, flag);
+  const showInBrief = decisions["in-brief-flag"];
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div>
@@ -41,7 +51,7 @@ export default function VenturePage() {
         </Suspense>
 
         <Suspense fallback={<PostListSkeleton />}>
-          <VenturePostList />
+          <VenturePostList showInBrief={showInBrief} />
         </Suspense>
       </div>
     </div>

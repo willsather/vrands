@@ -5,7 +5,11 @@ import { PostListItem } from "@/app/(components)/post-list-item";
 import { ArrowIcon } from "@/icons/arrow-icon";
 import { getPosts } from "@/lib/blog";
 
-export default async function VenturePostsSection() {
+export default async function VenturePostsSection({
+  showInBrief,
+}: {
+  showInBrief?: boolean;
+}) {
   const posts = await getPosts({ category: "Venture" });
 
   const [featuredPost, ...otherPosts] = posts;
@@ -37,7 +41,7 @@ export default async function VenturePostsSection() {
         {/* Other Posts List (Always Below Featured) */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {otherPosts.slice(0, 6).map((post) => (
-            <PostListItem key={post.id} post={post} theme="alternate" />
+            <PostListItem key={post.id} post={post} theme="alternate" showInBrief={showInBrief} />
           ))}
         </div>
       </div>

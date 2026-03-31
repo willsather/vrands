@@ -2,19 +2,19 @@ import Link from "next/link";
 
 import { InBriefIcon } from "@/icons/in-brief-icon";
 import type { Post } from "@/lib/blog";
-import { inBriefFlag } from "@/lib/flags";
 import { formatTimeSince } from "@/lib/utils";
 
 type PostListItemProps = {
   post: Post;
   theme?: "default" | "alternate";
+  showInBrief?: boolean;
 };
 
-export async function PostListItem({
+export function PostListItem({
   post,
   theme = "default",
+  showInBrief,
 }: PostListItemProps) {
-  const showInBrief = await inBriefFlag();
   const defaultStyles = {
     textColor: "text-tc-green",
     borderColor: "border-gray-300",

@@ -1,25 +1,26 @@
+import { deserialize } from "flags/next";
 import { Suspense } from "react";
 
 import HeroSkeleton from "@/app/(components)/(skeletons)/hero-skeleton";
 import LatestPostsSkeleton from "@/app/(components)/(skeletons)/latest-posts-skeleton";
 import VenturePostsSkeleton from "@/app/(components)/(skeletons)/venture-posts-skeleton";
 import Separator from "@/app/(components)/separator";
-import Hero from "@/app/(home)/hero";
-import LatestPostsSection from "@/app/(home)/latest-posts";
-import TitleSection from "@/app/(home)/title";
-import UpcomingEvents from "@/app/(home)/upcoming-events";
-import VenturePostsSection from "@/app/(home)/venture-posts";
+import Hero from "@/app/[flag]/(home)/hero";
+import LatestPostsSection from "@/app/[flag]/(home)/latest-posts";
+import TitleSection from "@/app/[flag]/(home)/title";
+import UpcomingEvents from "@/app/[flag]/(home)/upcoming-events";
+import VenturePostsSection from "@/app/[flag]/(home)/venture-posts";
+import { flags } from "@/lib/flags";
 
-/*
- * DEMO: Pages
- *
- * Automatically create frontend application routing
- * without having to specify pages and a router.
- *
- * All routes are specified and determined via the
- * file path under `/app`
- */
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ flag: string }>;
+}) {
+  const { flag } = await params;
+  const decisions = await deserialize(flags, flag);
+  const showInBrief = decisions["in-brief-flag"];
+
   return (
     <div className="min-h-screen bg-white">
       <TitleSection />
@@ -32,11 +33,11 @@ export default function HomePage() {
 
       <main>
         <Suspense fallback={<LatestPostsSkeleton />}>
-          <LatestPostsSection />
+          <LatestPostsSection showInBrief={showInBrief} />
         </Suspense>
 
         <Suspense fallback={<VenturePostsSkeleton />}>
-          <VenturePostsSection />
+          <VenturePostsSection showInBrief={showInBrief} />
         </Suspense>
 
         <UpcomingEvents />

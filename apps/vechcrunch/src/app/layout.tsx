@@ -73,7 +73,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
+        <Suspense fallback={null}>
+          <Header />
+        </Suspense>
         <Suspense fallback={null}>{children}</Suspense>
         <Suspense fallback={null}>
           <Footer />

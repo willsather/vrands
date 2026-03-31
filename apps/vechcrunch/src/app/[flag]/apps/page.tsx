@@ -1,10 +1,12 @@
+import { deserialize } from "flags/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
 import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
 import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
 import PopularPosts from "@/app/(components)/popular-posts";
-import AppsPostList from "@/app/apps/apps-post-list";
+import AppsPostList from "@/app/[flag]/apps/apps-post-list";
+import { flags } from "@/lib/flags";
 
 export const metadata: Metadata = {
   title: "Apps",
@@ -17,7 +19,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AppsPage() {
+export default async function AppsPage({
+  params,
+}: {
+  params: Promise<{ flag: string }>;
+}) {
+  const { flag } = await params;
+  const decisions = await deserialize(flags, flag);
+  const showInBrief = decisions["in-brief-flag"];
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div>
@@ -41,7 +51,7 @@ export default function AppsPage() {
         </Suspense>
 
         <Suspense fallback={<PostListSkeleton />}>
-          <AppsPostList />
+          <AppsPostList showInBrief={showInBrief} />
         </Suspense>
       </div>
     </div>

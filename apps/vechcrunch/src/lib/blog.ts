@@ -33,11 +33,7 @@ export async function getPosts(options?: {
   category?: "latest" | "popular" | string;
 }): Promise<Post[]> {
   "use cache";
-  cacheLife({
-    stale: 30,
-    revalidate: 60,
-    expire: 120,
-  });
+  cacheLife("hours");
   if (options?.name != null) {
     return await fetchPosts({ name: options.name });
   }
@@ -60,13 +56,19 @@ export async function getPosts(options?: {
 }
 
 export async function getPost(slug: string): Promise<Post | null> {
+  "use cache";
+  cacheLife("hours");
   return fetchPost(slug);
 }
 
 export async function getCategory(id: number): Promise<string | null> {
+  "use cache";
+  cacheLife("hours");
   return fetchCategory(id);
 }
 
 export async function getRSSFeed(): Promise<string> {
+  "use cache";
+  cacheLife("hours");
   return fetchRSSFeed();
 }
