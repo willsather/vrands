@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Suspense } from "react";
 
-import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
-import PopularPosts from "@/app/(components)/popular-posts";
-import { PostListItem } from "@/app/(components)/post-list-item";
+import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton";
+import PopularPosts from "@/components/popular-posts";
+import { PostListItem } from "@/components/post-list-item";
 import { ArrowIcon } from "@/icons/arrow-icon";
 import { getPosts } from "@/lib/blog";
 

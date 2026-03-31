@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { Toaster, toast } from "sonner";
 import { z } from "zod";
 
-import { newsletterAction } from "@/app/(components)/(newsletter)/newsletter-action";
+import { newsletterAction } from "@/components/newsletter/newsletter-action";
 import {
   Form,
   FormControl,

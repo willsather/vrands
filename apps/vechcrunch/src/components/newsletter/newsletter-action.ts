@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 
-import type { newsletterSchema } from "@/app/(components)/(newsletter)/newsletter-form";
+import type { newsletterSchema } from "@/components/newsletter/newsletter-form";
 
 /*
  * DEMO: Server Actions

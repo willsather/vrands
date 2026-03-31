@@ -1,8 +1,8 @@
 import { deserialize } from "flags/next";
 import type { Metadata } from "next";
 
-import PopularPosts from "@/app/(components)/popular-posts";
-import { PostListItem } from "@/app/(components)/post-list-item";
+import PopularPosts from "@/components/popular-posts";
+import { PostListItem } from "@/components/post-list-item";
 import { getPosts } from "@/lib/blog";
 import { flags } from "@/lib/flags";
 

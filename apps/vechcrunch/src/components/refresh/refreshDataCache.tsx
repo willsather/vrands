@@ -1,6 +1,6 @@
 "use client";
 
-import refreshDataCacheAction from "@/app/(components)/(refresh)/refresh-action";
+import refreshDataCacheAction from "@/components/refresh/refresh-action";
 import { RefreshIcon } from "@/icons/refresh-icon";
 
 export default function RefreshDataCache() {

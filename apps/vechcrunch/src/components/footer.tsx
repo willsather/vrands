@@ -1,7 +1,7 @@
 import { cacheLife } from "next/cache";
 import Link from "next/link";
 
-import NewsletterForm from "@/app/(components)/(newsletter)/newsletter-form";
+import NewsletterForm from "@/components/newsletter/newsletter-form";
 import { FacebookIcon } from "@/icons/facebook-icon";
 import { InstagramIcon } from "@/icons/instagram-icon";
 import { LinkedInIcon } from "@/icons/linkedin-icon";

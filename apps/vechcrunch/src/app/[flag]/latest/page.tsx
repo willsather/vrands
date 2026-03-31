@@ -2,10 +2,10 @@ import { deserialize } from "flags/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
-import RefreshDataCache from "@/app/(components)/(refresh)/refreshDataCache";
-import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
-import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
-import PopularPosts from "@/app/(components)/popular-posts";
+import RefreshDataCache from "@/components/refresh/refreshDataCache";
+import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton";
+import PostListSkeleton from "@/components/skeletons/post-list-skeleton";
+import PopularPosts from "@/components/popular-posts";
 import LatestPostList from "@/app/[flag]/latest/latest-post-list";
 import { flags } from "@/lib/flags";
 

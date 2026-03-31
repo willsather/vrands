@@ -2,9 +2,9 @@ import { deserialize } from "flags/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
-import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
-import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
-import PopularPosts from "@/app/(components)/popular-posts";
+import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton";
+import PostListSkeleton from "@/components/skeletons/post-list-skeleton";
+import PopularPosts from "@/components/popular-posts";
 import StartupsPostList from "@/app/[flag]/startups/startups-post-list";
 import { flags } from "@/lib/flags";
 

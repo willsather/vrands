@@ -1,4 +1,4 @@
-import { PostListItem } from "@/app/(components)/post-list-item";
+import { PostListItem } from "@/components/post-list-item";
 import { getPosts } from "@/lib/blog";
 
 export default async function AIPostList({

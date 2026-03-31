@@ -1,10 +1,10 @@
 import { deserialize } from "flags/next";
 import { Suspense } from "react";
 
-import HeroSkeleton from "@/app/(components)/(skeletons)/hero-skeleton";
-import LatestPostsSkeleton from "@/app/(components)/(skeletons)/latest-posts-skeleton";
-import VenturePostsSkeleton from "@/app/(components)/(skeletons)/venture-posts-skeleton";
-import Separator from "@/app/(components)/separator";
+import HeroSkeleton from "@/components/skeletons/hero-skeleton";
+import LatestPostsSkeleton from "@/components/skeletons/latest-posts-skeleton";
+import VenturePostsSkeleton from "@/components/skeletons/venture-posts-skeleton";
+import Separator from "@/components/separator";
 import Hero from "@/app/[flag]/(home)/hero";
 import LatestPostsSection from "@/app/[flag]/(home)/latest-posts";
 import TitleSection from "@/app/[flag]/(home)/title";

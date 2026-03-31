@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Suspense } from "react";
 
-import Footer from "@/app/(components)/footer";
-import Header from "@/app/(components)/header";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 
 import "./globals.css";
 

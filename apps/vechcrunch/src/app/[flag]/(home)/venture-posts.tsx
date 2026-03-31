@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import PostCard from "@/app/(components)/post-card";
-import { PostListItem } from "@/app/(components)/post-list-item";
+import PostCard from "@/components/post-card";
+import { PostListItem } from "@/components/post-list-item";
 import { ArrowIcon } from "@/icons/arrow-icon";
 import { getPosts } from "@/lib/blog";
 

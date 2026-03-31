@@ -1,5 +1,5 @@
-import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
-import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
+import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton";
+import PostListSkeleton from "@/components/skeletons/post-list-skeleton";
 
 export default function SearchLoadingPage() {
   return (
