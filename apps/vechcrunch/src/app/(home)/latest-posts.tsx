@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { Suspense } from "react";
 
+import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
 import PopularPosts from "@/app/(components)/popular-posts";
 import { PostListItem } from "@/app/(components)/post-list-item";
 import { ArrowIcon } from "@/icons/arrow-icon";
@@ -24,12 +26,12 @@ export default async function LatestPostsSection() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-12">
-        {/* Sidebar */}
         <div className="order-1 space-y-6 md:order-2 lg:col-span-4">
-          <PopularPosts />
+          <Suspense fallback={<PopularPostsSkeleton />}>
+            <PopularPosts />
+          </Suspense>
         </div>
 
-        {/* Articles List */}
         <div className="order-2 md:order-1 lg:col-span-8">
           <div>
             {posts.map((post) => (

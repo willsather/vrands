@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import RefreshDataCache from "@/app/(components)/(refresh)/refreshDataCache";
+import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
+import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
 import PopularPosts from "@/app/(components)/popular-posts";
 import LatestPostList from "@/app/latest/latest-post-list";
 
@@ -11,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function LatestPage() {
+export default function LatestPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div>
@@ -24,11 +27,13 @@ export default async function LatestPage() {
         <div className="my-4 border-tc-green border-t-8" />
       </div>
       <div className="grid gap-8 lg:grid-cols-12">
-        {/* Popular Posts Sidebar */}
-        <PopularPosts />
+        <Suspense fallback={<PopularPostsSkeleton />}>
+          <PopularPosts />
+        </Suspense>
 
-        {/* Main Content */}
-        <LatestPostList />
+        <Suspense fallback={<PostListSkeleton />}>
+          <LatestPostList />
+        </Suspense>
       </div>
 
       <RefreshDataCache />

@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@vrands/ui/components/button";
 import { track } from "@vercel/analytics";
+import { Button } from "@vrands/ui/components/button";
 import Link from "next/link";
 
 interface CardSubheroCTAButtonsProps {

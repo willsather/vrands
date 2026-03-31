@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
+import PopularPostsSkeleton from "@/app/(components)/(skeletons)/popular-posts-skeleton";
+import PostListSkeleton from "@/app/(components)/(skeletons)/post-list-skeleton";
 import PopularPosts from "@/app/(components)/popular-posts";
 import StartupsPostList from "@/app/startups/startups-post-list";
 
@@ -14,7 +17,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function StartupsPage() {
+export default function StartupsPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <div>
@@ -32,11 +35,13 @@ export default async function StartupsPage() {
       </div>
 
       <div className="grid gap-8 lg:grid-cols-12">
-        {/* Popular Posts Sidebar */}
-        <PopularPosts />
+        <Suspense fallback={<PopularPostsSkeleton />}>
+          <PopularPosts />
+        </Suspense>
 
-        {/* Main Content */}
-        <StartupsPostList />
+        <Suspense fallback={<PostListSkeleton />}>
+          <StartupsPostList />
+        </Suspense>
       </div>
     </div>
   );

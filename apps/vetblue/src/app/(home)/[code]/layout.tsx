@@ -1,8 +1,8 @@
-import { connection } from "next/server";
 import { type FlagValuesType, encrypt } from "flags";
 import { generatePermutations } from "flags/next";
 import { deserialize } from "flags/next";
 import { FlagValues } from "flags/react";
+import { connection } from "next/server";
 import { type ReactNode, Suspense } from "react";
 
 import { homeFlags } from "@/lib/flags";

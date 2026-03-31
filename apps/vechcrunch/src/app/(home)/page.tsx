@@ -1,3 +1,8 @@
+import { Suspense } from "react";
+
+import HeroSkeleton from "@/app/(components)/(skeletons)/hero-skeleton";
+import LatestPostsSkeleton from "@/app/(components)/(skeletons)/latest-posts-skeleton";
+import VenturePostsSkeleton from "@/app/(components)/(skeletons)/venture-posts-skeleton";
 import Separator from "@/app/(components)/separator";
 import Hero from "@/app/(home)/hero";
 import LatestPostsSection from "@/app/(home)/latest-posts";
@@ -14,20 +19,25 @@ import VenturePostsSection from "@/app/(home)/venture-posts";
  * All routes are specified and determined via the
  * file path under `/app`
  */
-export default async function HomePage() {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       <TitleSection />
 
-      <Hero />
+      <Suspense fallback={<HeroSkeleton />}>
+        <Hero />
+      </Suspense>
 
       <Separator />
 
-      {/* Main Content */}
       <main>
-        <LatestPostsSection />
+        <Suspense fallback={<LatestPostsSkeleton />}>
+          <LatestPostsSection />
+        </Suspense>
 
-        <VenturePostsSection />
+        <Suspense fallback={<VenturePostsSkeleton />}>
+          <VenturePostsSection />
+        </Suspense>
 
         <UpcomingEvents />
       </main>

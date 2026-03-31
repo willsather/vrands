@@ -1,8 +1,8 @@
 "use client";
 
+import { track } from "@vercel/analytics";
 import { Button } from "@vrands/ui/components/button";
 import type { Lang } from "@vrands/utils";
-import { track } from "@vercel/analytics";
 import { ArrowRight } from "lucide-react";
 
 import { GetStartedButton } from "@/components/get-started-button";

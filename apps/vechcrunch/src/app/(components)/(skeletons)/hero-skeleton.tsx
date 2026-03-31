@@ -1,4 +1,4 @@
-export default async function HeroSkeleton() {
+export default function HeroSkeleton() {
   return (
     <div className="min-h-[70vh] bg-tc-green pb-8">
       <div className="container mx-auto px-4">

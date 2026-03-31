@@ -1,11 +1,15 @@
 import { track } from "@vercel/analytics/server";
-import Image from "next/image";
 import { headers } from "next/headers";
+import Image from "next/image";
 
 import ApplyButton from "@/app/(home)/apply-button";
 
 export default async function CreditCardPromo() {
-  await track("Promotion Shown", {}, { flags: ["credit-card-promo-flag"], headers: await headers() });
+  await track(
+    "Promotion Shown",
+    {},
+    { flags: ["credit-card-promo-flag"], headers: await headers() },
+  );
 
   return (
     <section className="container mx-auto px-4 py-12">
