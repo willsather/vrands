@@ -5,21 +5,21 @@ import { Suspense } from "react";
 import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton";
 import PostListSkeleton from "@/components/skeletons/post-list-skeleton";
 import PopularPosts from "@/components/popular-posts";
-import StartupsPostList from "@/app/[flag]/startups/startups-post-list";
+import AIPostList from "@/app/[flag]/(pages)/ai/ai-post-list";
 import { flags } from "@/lib/flags";
 
 export const metadata: Metadata = {
-  title: "Startups",
+  title: "AI",
   description:
-    "Read more about tech startup news that breaks down funding, growth, and long-term trajectory of companies across every stage and industry.",
+    "Read the latest on artificial intelligence and machine learning tech, the companies that are building them, and the ethical issues AI raises today.",
   openGraph: {
-    title: "Startups",
+    title: "AI",
     description:
-      "Read more about tech startup news that breaks down funding, growth, and long-term trajectory of companies across every stage and industry.",
+      "Read the latest on artificial intelligence and machine learning tech, the companies that are building them, and the ethical issues AI raises today.",
   },
 };
 
-export default async function StartupsPage({
+export default async function AIPage({
   params,
 }: {
   params: Promise<{ flag: string }>;
@@ -32,12 +32,13 @@ export default async function StartupsPage({
     <div className="container mx-auto px-4 py-8">
       <div>
         <div className="my-4 flex flex-col md:my-8 md:flex-row md:justify-between">
-          <h1 className="my-2 text-6xl text-tc-green md:text-8xl">Startups</h1>
+          <h1 className="my-2 text-6xl text-tc-green md:text-8xl">AI</h1>
           <p className="max-w-xl">
-            Tech startup news that breaks down the funding, growth, and
-            long-term trajectory of companies across every stage and industry.
-            Startup coverage includes climate, crypto, fintech, SaaS,
-            transportation, and consumer tech.
+            News coverage on artificial intelligence and machine learning tech,
+            the companies building them, and the ethical issues AI raises today.
+            This encompasses generative AI, including large language models,
+            text-to-image and text-to-video models; speech recognition and
+            generation; and predictive analytics.
           </p>
         </div>
 
@@ -50,7 +51,7 @@ export default async function StartupsPage({
         </Suspense>
 
         <Suspense fallback={<PostListSkeleton />}>
-          <StartupsPostList showInBrief={showInBrief} />
+          <AIPostList showInBrief={showInBrief} />
         </Suspense>
       </div>
     </div>

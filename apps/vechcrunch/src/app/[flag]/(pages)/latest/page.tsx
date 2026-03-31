@@ -6,7 +6,7 @@ import RefreshDataCache from "@/components/refresh/refreshDataCache";
 import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton";
 import PostListSkeleton from "@/components/skeletons/post-list-skeleton";
 import PopularPosts from "@/components/popular-posts";
-import LatestPostList from "@/app/[flag]/latest/latest-post-list";
+import LatestPostList from "@/app/[flag]/(pages)/latest/latest-post-list";
 import { flags } from "@/lib/flags";
 
 export const metadata: Metadata = {

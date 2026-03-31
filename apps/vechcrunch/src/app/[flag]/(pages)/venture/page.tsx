@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton";
 import PostListSkeleton from "@/components/skeletons/post-list-skeleton";
 import PopularPosts from "@/components/popular-posts";
-import VenturePostList from "@/app/[flag]/venture/venture-post-list";
+import VenturePostList from "@/app/[flag]/(pages)/venture/venture-post-list";
 import { flags } from "@/lib/flags";
 
 export const metadata: Metadata = {

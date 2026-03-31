@@ -12,7 +12,11 @@ const mainNavItems = [
   { label: "AI", href: "/ai" },
 ];
 
-export default function HeaderSkeleton() {
+export default function HeaderSkeleton({
+  showLogo = true,
+}: {
+  showLogo?: boolean;
+}) {
   return (
     <header className="sticky top-0 z-50 w-full bg-tc-black">
       <div className="shadow-sm">
@@ -22,6 +26,16 @@ export default function HeaderSkeleton() {
               <Link href="/" className="flex items-center gap-2">
                 <TechCrunchLogo className="size-8 fill-white md:hidden" />
               </Link>
+
+              {showLogo ? (
+                <Link
+                  href="/"
+                  className="mr-8 hidden font-bold text-white text-xl md:flex md:items-center md:gap-4"
+                >
+                  <TechCrunchLogo className="size-8" />
+                  TechCrunch
+                </Link>
+              ) : null}
 
               <nav className="hidden items-center space-x-6 md:flex">
                 {mainNavItems.map((item) => (

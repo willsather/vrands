@@ -5,21 +5,21 @@ import { Suspense } from "react";
 import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton";
 import PostListSkeleton from "@/components/skeletons/post-list-skeleton";
 import PopularPosts from "@/components/popular-posts";
-import AppsPostList from "@/app/[flag]/apps/apps-post-list";
+import StartupsPostList from "@/app/[flag]/(pages)/startups/startups-post-list";
 import { flags } from "@/lib/flags";
 
 export const metadata: Metadata = {
-  title: "Apps",
+  title: "Startups",
   description:
-    "As the app economy continues to grow, both on iOS and Google Play stores, TechCrunch covers the latest app news and updates across both digital storefronts.",
+    "Read more about tech startup news that breaks down funding, growth, and long-term trajectory of companies across every stage and industry.",
   openGraph: {
-    title: "Apps",
+    title: "Startups",
     description:
-      "As the app economy continues to grow, both on iOS and Google Play stores, TechCrunch covers the latest app news and updates across both digital storefronts.",
+      "Read more about tech startup news that breaks down funding, growth, and long-term trajectory of companies across every stage and industry.",
   },
 };
 
-export default async function AppsPage({
+export default async function StartupsPage({
   params,
 }: {
   params: Promise<{ flag: string }>;
@@ -32,13 +32,12 @@ export default async function AppsPage({
     <div className="container mx-auto px-4 py-8">
       <div>
         <div className="my-4 flex flex-col md:my-8 md:flex-row md:justify-between">
-          <h1 className="my-2 text-6xl text-tc-green md:text-8xl">Apps</h1>
+          <h1 className="my-2 text-6xl text-tc-green md:text-8xl">Startups</h1>
           <p className="max-w-xl">
-            The app economy continues to grow, having produced a record number
-            of downloads and consumer spending across both the iOS and Google
-            Play stores. Keep up with this fast-moving industry in one place,
-            with the latest from the world of apps, including news, updates,
-            startup fundings, mergers and acquisitions, and much more.
+            Tech startup news that breaks down the funding, growth, and
+            long-term trajectory of companies across every stage and industry.
+            Startup coverage includes climate, crypto, fintech, SaaS,
+            transportation, and consumer tech.
           </p>
         </div>
 
@@ -51,7 +50,7 @@ export default async function AppsPage({
         </Suspense>
 
         <Suspense fallback={<PostListSkeleton />}>
-          <AppsPostList showInBrief={showInBrief} />
+          <StartupsPostList showInBrief={showInBrief} />
         </Suspense>
       </div>
     </div>

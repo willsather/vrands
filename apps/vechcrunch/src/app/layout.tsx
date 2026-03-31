@@ -5,10 +5,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Suspense } from "react";
 
-import Footer from "@/components/footer";
-import Header from "@/components/header";
-import HeaderSkeleton from "@/components/skeletons/header-skeleton";
-
 import "./globals.css";
 
 /*
@@ -74,13 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Suspense fallback={<HeaderSkeleton />}>
-          <Header />
-        </Suspense>
         <Suspense fallback={null}>{children}</Suspense>
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
 
         {/*DEMO: Vercel Analytics/Speed Insights SDK Packages for reporting*/}
         <Analytics />

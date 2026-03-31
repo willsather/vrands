@@ -18,7 +18,6 @@ export default function SearchLoadingPage() {
 
       <div className="grid gap-8 lg:grid-cols-12">
         <PopularPostsSkeleton />
-
         <PostListSkeleton />
       </div>
     </div>
