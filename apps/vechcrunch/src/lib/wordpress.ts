@@ -82,11 +82,13 @@ export async function fetchPosts(options?: {
   });
 
   if (!response.ok) {
+    console.warn(`wp api: fetchPosts failed ${response.status} ${url}`);
     return [];
   }
 
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) {
+    console.warn(`wp api: fetchPosts returned non-json ${url}`);
     return [];
   }
 
@@ -94,9 +96,9 @@ export async function fetchPosts(options?: {
 
   return await Promise.all(
     wpPosts.map(async (post) => {
-      const categories = await Promise.all(
-        post.categories?.map((id) => getCategory(id)) ?? [],
-      );
+      const categories = (
+        await Promise.all(post.categories?.map((id) => getCategory(id)) ?? [])
+      ).filter((c): c is string => c != null);
 
       return PostSchema.parse({
         id: post.id,
@@ -112,7 +114,7 @@ export async function fetchPosts(options?: {
         },
         image: post.jetpack_featured_media_url,
         author: post.yoast_head_json?.author,
-        categories: categories,
+        categories,
       });
     }),
   );
@@ -125,11 +127,13 @@ export async function fetchPost(slug: string): Promise<Post | null> {
   });
 
   if (!response.ok) {
+    console.warn(`wp api: fetchPost failed ${response.status} for slug="${slug}"`);
     return null;
   }
 
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) {
+    console.warn(`wp api: fetchPost returned non-json for slug="${slug}"`);
     return null;
   }
 
@@ -140,9 +144,11 @@ export async function fetchPost(slug: string): Promise<Post | null> {
     return null;
   }
 
-  const categories = await Promise.all(
-    wpPost.categories?.map((id) => getCategory(id)) ?? [],
-  );
+  const categories = (
+    await Promise.all(
+      wpPost.categories?.map((id) => getCategory(id)) ?? [],
+    )
+  ).filter((c): c is string => c != null);
 
   return PostSchema.parse({
     id: wpPost.id,
@@ -153,7 +159,7 @@ export async function fetchPost(slug: string): Promise<Post | null> {
     content: he.decode(wpPost.content.rendered),
     image: wpPost.jetpack_featured_media_url,
     author: wpPost.yoast_head_json?.author,
-    categories: categories,
+    categories,
   });
 }
 
@@ -167,11 +173,13 @@ export async function fetchCategory(id: number): Promise<string | null> {
   );
 
   if (!response.ok) {
+    console.warn(`wp api: fetchCategory failed ${response.status} for id=${id}`);
     return null;
   }
 
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) {
+    console.warn(`wp api: fetchCategory returned non-json for id=${id}`);
     return null;
   }
 
@@ -192,11 +200,13 @@ async function getCategoryId(category: string): Promise<number | null> {
   );
 
   if (!response.ok) {
+    console.warn(`wp api: getCategoryId failed ${response.status} for "${category}"`);
     return null;
   }
 
   const contentType = response.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) {
+    console.warn(`wp api: getCategoryId returned non-json for "${category}"`);
     return null;
   }
 
