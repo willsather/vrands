@@ -1,10 +1,9 @@
-import { deserialize } from "flags/next";
 import type { Metadata } from "next";
 
 import PopularPosts from "@/components/popular-posts";
 import { PostListItem } from "@/components/post-list-item";
 import { getPosts } from "@/lib/blog";
-import { flags } from "@/lib/flags";
+import { flags, inBriefFlag, searchResultsFlag } from "@/lib/flags";
 
 export const metadata: Metadata = {
   title: "Search",
@@ -23,11 +22,11 @@ export default async function SearchPage(props: {
   const searchParams = await props.searchParams;
   const { q: query } = searchParams as { [key: string]: string };
 
-  const posts = await getPosts({ name: query });
-
-  const decisions = await deserialize(flags, flag);
-  const countEnabled = decisions["search-results-flag"];
-  const showInBrief = decisions["in-brief-flag"];
+  const [posts, countEnabled, showInBrief] = await Promise.all([
+    getPosts({ name: query }),
+    searchResultsFlag(flag, flags),
+    inBriefFlag(flag, flags),
+  ]);
 
   return (
     <div className="container mx-auto px-4 py-8">

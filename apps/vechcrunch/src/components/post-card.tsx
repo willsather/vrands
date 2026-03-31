@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { TimeAgo } from "@/components/time-ago";
 import type { Post } from "@/lib/blog";
-import { formatTimeSince } from "@/lib/utils";
 
 export default async function PostCard({ post }: { post: Post }) {
   return (
@@ -28,7 +28,7 @@ export default async function PostCard({ post }: { post: Post }) {
             <div className="flex items-center space-x-2 text-gray-300 text-xs">
               <span>{post.author}</span>
               <span>•</span>
-              <time>{formatTimeSince(post.date)}</time>
+              <TimeAgo date={post.date} />
             </div>
           </div>
         </div>

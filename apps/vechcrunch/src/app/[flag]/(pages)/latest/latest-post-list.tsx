@@ -1,12 +1,12 @@
 import { PostListItem } from "@/components/post-list-item";
 import { getPosts } from "@/lib/blog";
+import { flags, inBriefFlag } from "@/lib/flags";
 
-export default async function LatestPostList({
-  showInBrief,
-}: {
-  showInBrief?: boolean;
-}) {
-  const posts = await getPosts({ category: "latest" });
+export default async function LatestPostList({ code }: { code: string }) {
+  const [posts, showInBrief] = await Promise.all([
+    getPosts({ category: "latest" }),
+    inBriefFlag(code, flags),
+  ]);
 
   return (
     <div className="order-2 md:order-1 lg:col-span-8">

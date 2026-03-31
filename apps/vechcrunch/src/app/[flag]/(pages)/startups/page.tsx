@@ -1,4 +1,3 @@
-import { deserialize } from "flags/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
@@ -6,7 +5,6 @@ import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton"
 import PostListSkeleton from "@/components/skeletons/post-list-skeleton";
 import PopularPosts from "@/components/popular-posts";
 import StartupsPostList from "@/app/[flag]/(pages)/startups/startups-post-list";
-import { flags } from "@/lib/flags";
 
 export const metadata: Metadata = {
   title: "Startups",
@@ -25,8 +23,6 @@ export default async function StartupsPage({
   params: Promise<{ flag: string }>;
 }) {
   const { flag } = await params;
-  const decisions = await deserialize(flags, flag);
-  const showInBrief = decisions["in-brief-flag"];
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -50,7 +46,7 @@ export default async function StartupsPage({
         </Suspense>
 
         <Suspense fallback={<PostListSkeleton />}>
-          <StartupsPostList showInBrief={showInBrief} />
+          <StartupsPostList code={flag} />
         </Suspense>
       </div>
     </div>

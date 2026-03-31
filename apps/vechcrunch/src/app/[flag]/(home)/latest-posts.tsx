@@ -6,13 +6,17 @@ import PopularPosts from "@/components/popular-posts";
 import { PostListItem } from "@/components/post-list-item";
 import { ArrowIcon } from "@/icons/arrow-icon";
 import { getPosts } from "@/lib/blog";
+import { flags, inBriefFlag } from "@/lib/flags";
 
 export default async function LatestPostsSection({
-  showInBrief,
+  code,
 }: {
-  showInBrief?: boolean;
+  code: string;
 }) {
-  const posts = await getPosts({ category: "latest" });
+  const [posts, showInBrief] = await Promise.all([
+    getPosts({ category: "latest" }),
+    inBriefFlag(code, flags),
+  ]);
 
   return (
     <div className="container mx-auto px-4 py-8">

@@ -1,4 +1,3 @@
-import { deserialize } from "flags/next";
 import { Suspense } from "react";
 
 import HeroSkeleton from "@/components/skeletons/hero-skeleton";
@@ -10,7 +9,6 @@ import LatestPostsSection from "@/app/[flag]/(home)/latest-posts";
 import TitleSection from "@/app/[flag]/(home)/title";
 import UpcomingEvents from "@/app/[flag]/(home)/upcoming-events";
 import VenturePostsSection from "@/app/[flag]/(home)/venture-posts";
-import { flags } from "@/lib/flags";
 
 export default async function HomePage({
   params,
@@ -18,8 +16,6 @@ export default async function HomePage({
   params: Promise<{ flag: string }>;
 }) {
   const { flag } = await params;
-  const decisions = await deserialize(flags, flag);
-  const showInBrief = decisions["in-brief-flag"];
 
   return (
     <div className="min-h-screen bg-white">
@@ -33,11 +29,11 @@ export default async function HomePage({
 
       <main>
         <Suspense fallback={<LatestPostsSkeleton />}>
-          <LatestPostsSection showInBrief={showInBrief} />
+          <LatestPostsSection code={flag} />
         </Suspense>
 
         <Suspense fallback={<VenturePostsSkeleton />}>
-          <VenturePostsSection showInBrief={showInBrief} />
+          <VenturePostsSection code={flag} />
         </Suspense>
 
         <UpcomingEvents />

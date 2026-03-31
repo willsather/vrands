@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { TimeAgo } from "@/components/time-ago";
 import { getPosts } from "@/lib/blog";
-import { formatTimeSince } from "@/lib/utils";
 
 /*
  * DEMO: Images
@@ -47,9 +47,7 @@ export default async function Hero() {
                     <div className="flex items-center space-x-2 text-gray-300 text-sm">
                       <span>{featuredPost?.author}</span>
                       <span>•</span>
-                      <time>
-                        {formatTimeSince(new Date(featuredPost?.date ?? ""))}
-                      </time>
+                      <TimeAgo date={new Date(featuredPost?.date ?? "")} />
                     </div>
                   </div>
                 </div>
@@ -88,9 +86,7 @@ export default async function Hero() {
 
                       <div className="flex items-center space-x-4 text-gray-300 text-xs">
                         <span>{post?.author}</span>
-                        <time>
-                          {formatTimeSince(new Date(post?.date ?? ""))}
-                        </time>
+                        <TimeAgo date={new Date(post?.date ?? "")} />
                       </div>
                     </div>
                   </div>

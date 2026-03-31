@@ -4,13 +4,17 @@ import PostCard from "@/components/post-card";
 import { PostListItem } from "@/components/post-list-item";
 import { ArrowIcon } from "@/icons/arrow-icon";
 import { getPosts } from "@/lib/blog";
+import { flags, inBriefFlag } from "@/lib/flags";
 
 export default async function VenturePostsSection({
-  showInBrief,
+  code,
 }: {
-  showInBrief?: boolean;
+  code: string;
 }) {
-  const posts = await getPosts({ category: "Venture" });
+  const [posts, showInBrief] = await Promise.all([
+    getPosts({ category: "Venture" }),
+    inBriefFlag(code, flags),
+  ]);
 
   const [featuredPost, ...otherPosts] = posts;
 

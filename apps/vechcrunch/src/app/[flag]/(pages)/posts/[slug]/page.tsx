@@ -6,8 +6,8 @@ import { notFound } from "next/navigation";
 import { FacebookIcon } from "@/icons/facebook-icon";
 import { LinkedInIcon } from "@/icons/linkedin-icon";
 import { TwitterIcon } from "@/icons/twitter-icon";
+import { TimeAgo } from "@/components/time-ago";
 import { getPost, getPosts } from "@/lib/blog";
-import { formatTimeSince } from "@/lib/utils";
 
 /*
  * DEMO: Static Site Generation (SSG)
@@ -100,9 +100,9 @@ export default async function BlogPost({
               <Link href="#" className="block text-lg hover:text-white/80">
                 {post.author}
               </Link>
-              <time className="block text-white/80">
-                {formatTimeSince(post.date)}
-              </time>
+              <span className="block text-white/80">
+                <TimeAgo date={post.date} />
+              </span>
             </div>
 
             {/* Social Share Buttons */}

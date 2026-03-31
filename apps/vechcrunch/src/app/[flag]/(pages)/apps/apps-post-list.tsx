@@ -1,12 +1,12 @@
 import { PostListItem } from "@/components/post-list-item";
 import { getPosts } from "@/lib/blog";
+import { flags, inBriefFlag } from "@/lib/flags";
 
-export default async function AppsPostList({
-  showInBrief,
-}: {
-  showInBrief?: boolean;
-}) {
-  const posts = await getPosts({ category: "Apps" });
+export default async function AppsPostList({ code }: { code: string }) {
+  const [posts, showInBrief] = await Promise.all([
+    getPosts({ category: "Apps" }),
+    inBriefFlag(code, flags),
+  ]);
 
   return (
     <div className="order-2 md:order-1 lg:col-span-8">

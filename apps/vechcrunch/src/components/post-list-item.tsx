@@ -1,8 +1,8 @@
 import Link from "next/link";
 
+import { TimeAgo } from "@/components/time-ago";
 import { InBriefIcon } from "@/icons/in-brief-icon";
 import type { Post } from "@/lib/blog";
-import { formatTimeSince } from "@/lib/utils";
 
 type PostListItemProps = {
   post: Post;
@@ -72,7 +72,7 @@ export function PostListItem({
           <div className="mt-auto flex flex-col items-start gap-2 font-medium text-gray-500 text-sm md:flex-row md:items-center">
             <span>{post.author}</span>
             <span className="hidden md:block">-</span>
-            <time>{formatTimeSince(post.date)}</time>
+            <TimeAgo date={post.date} />
           </div>
         </div>
       </Link>

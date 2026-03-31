@@ -1,4 +1,3 @@
-import { deserialize } from "flags/next";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
@@ -6,7 +5,6 @@ import PopularPostsSkeleton from "@/components/skeletons/popular-posts-skeleton"
 import PostListSkeleton from "@/components/skeletons/post-list-skeleton";
 import PopularPosts from "@/components/popular-posts";
 import AIPostList from "@/app/[flag]/(pages)/ai/ai-post-list";
-import { flags } from "@/lib/flags";
 
 export const metadata: Metadata = {
   title: "AI",
@@ -25,8 +23,6 @@ export default async function AIPage({
   params: Promise<{ flag: string }>;
 }) {
   const { flag } = await params;
-  const decisions = await deserialize(flags, flag);
-  const showInBrief = decisions["in-brief-flag"];
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -51,7 +47,7 @@ export default async function AIPage({
         </Suspense>
 
         <Suspense fallback={<PostListSkeleton />}>
-          <AIPostList showInBrief={showInBrief} />
+          <AIPostList code={flag} />
         </Suspense>
       </div>
     </div>
