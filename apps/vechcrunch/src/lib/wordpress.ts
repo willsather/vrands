@@ -59,7 +59,7 @@ export async function fetchPosts(options?: {
   if (options?.category) {
     const categoryId = await getCategoryId(options.category);
     if (categoryId == null) {
-      throw new Error(`Unable to find category: ${options.category}`);
+      return [];
     }
     queryParams.push(`categories=${categoryId}`);
   }
@@ -82,9 +82,12 @@ export async function fetchPosts(options?: {
   });
 
   if (!response.ok) {
-    throw new Error(
-      `Failed to fetch posts: ${response.status} ${response.statusText}`,
-    );
+    return [];
+  }
+
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("application/json")) {
+    return [];
   }
 
   const wpPosts = WPPostSchema.array().parse(await response.json());
@@ -122,14 +125,19 @@ export async function fetchPost(slug: string): Promise<Post | null> {
   });
 
   if (!response.ok) {
-    throw new Error("Failed to fetch posts");
+    return null;
+  }
+
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("application/json")) {
+    return null;
   }
 
   const wpPosts = WPPostSchema.array().parse(await response.json());
   const wpPost = wpPosts.length > 0 ? wpPosts[0] : null;
 
   if (wpPost == null) {
-    throw new Error(`Unable to find post: ${slug}`);
+    return null;
   }
 
   const categories = await Promise.all(
@@ -157,6 +165,16 @@ export async function fetchCategory(id: number): Promise<string | null> {
       next: { tags: ["posts"] },
     },
   );
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("application/json")) {
+    return null;
+  }
+
   const wpCategories = WPCategorySchema.array().parse(await response.json());
 
   return wpCategories.length > 0
@@ -172,6 +190,16 @@ async function getCategoryId(category: string): Promise<number | null> {
       next: { tags: ["posts"] },
     },
   );
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("application/json")) {
+    return null;
+  }
+
   const wpCategories = WPCategorySchema.array().parse(await response.json());
 
   return wpCategories.find((c) => c.name === category)?.id ?? null;
