@@ -2,6 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
+  rewrites: async () => [
+    {
+      source: "/.well-known/vercel/flags",
+      destination: "/api/vercel/flags",
+    },
+  ],
   images: {
     remotePatterns: [
       {

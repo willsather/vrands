@@ -15,7 +15,7 @@
     "@vrands/ui": "workspace:*",
     "@vrands/utils": "workspace:*",
     "clsx": "^2.1.1",
-    "flags": "^4.0.2",
+    "flags": "^4.0.6",
     "geist": "^1.5.1",
     "lucide-react": "^0.487.0",
     "next": "16.2.1",

@@ -219,7 +219,7 @@ importers:
     dependencies:
       '@flags-sdk/vercel':
         specifier: ^1.2.1
-        version: 1.2.1(flags@4.0.2(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
+        version: 1.2.1(flags@4.0.6(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
       '@hookform/resolvers':
         specifier: ^5.2.2
         version: 5.2.2(react-hook-form@7.68.0(react@19.2.1))
@@ -245,8 +245,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       flags:
-        specifier: ^4.0.2
-        version: 4.0.2(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        specifier: ^4.0.6
+        version: 4.0.6(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       he:
         specifier: ^1.2.0
         version: 1.2.0
@@ -348,8 +348,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       flags:
-        specifier: ^3.2.0
-        version: 3.2.0(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
+        specifier: ^4.0.6
+        version: 4.0.6(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
       geist:
         specifier: ^1.5.1
         version: 1.5.1(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))
@@ -448,8 +448,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       flags:
-        specifier: ^3.2.0
-        version: 3.2.0(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
+        specifier: ^4.0.6
+        version: 4.0.6(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.2.1)
@@ -536,8 +536,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       flags:
-        specifier: ^4.0.2
-        version: 4.0.2(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
+        specifier: ^4.0.6
+        version: 4.0.6(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
       geist:
         specifier: ^1.5.1
         version: 1.5.1(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))
@@ -639,8 +639,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       flags:
-        specifier: ^4.0.2
-        version: 4.0.2(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
+        specifier: ^4.0.6
+        version: 4.0.6(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
       geist:
         specifier: ^1.5.1
         version: 1.5.1(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))
@@ -3774,46 +3774,6 @@ packages:
   fix-dts-default-cjs-exports@1.0.1:
     resolution: {integrity: sha512-pVIECanWFC61Hzl2+oOCtoJ3F17kglZC/6N94eRWycFgBH35hHx0Li604ZIzhseh97mf2p0cv7vVrOZGoqhlEg==}
 
-  flags@3.2.0:
-    resolution: {integrity: sha512-rmJHXg4ijRgWNf/OdEGbd3FaqMwvKlcrtelKwTtPCzsNWuian9Tz+wXU+3XSO3ljqlpQYyzMgdwz3CBs/5DtZA==}
-    peerDependencies:
-      '@opentelemetry/api': ^1.7.0
-      '@sveltejs/kit': '*'
-      next: '*'
-      react: '*'
-      react-dom: '*'
-    peerDependenciesMeta:
-      '@opentelemetry/api':
-        optional: true
-      '@sveltejs/kit':
-        optional: true
-      next:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-
-  flags@4.0.2:
-    resolution: {integrity: sha512-qNMPc10TKe/5pA0evWxS0vDm3AMpicB7uf6e/+828chNAWUoVziRJfyOcBWwadl4zBhmTfPz+hxTVpNKF7+/PA==}
-    peerDependencies:
-      '@opentelemetry/api': ^1.7.0
-      '@sveltejs/kit': '*'
-      next: '*'
-      react: '*'
-      react-dom: '*'
-    peerDependenciesMeta:
-      '@opentelemetry/api':
-        optional: true
-      '@sveltejs/kit':
-        optional: true
-      next:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-
   flags@4.0.6:
     resolution: {integrity: sha512-8Rz/5L8Gkl2+LmlV2gOXx3iJNTYDooa8eGvshFev9nrXtrcvsXa5z/DXdtElHvN15psnSHg+r51lYHge2rCASw==}
     peerDependencies:
@@ -5669,19 +5629,19 @@ snapshots:
       - '@opentelemetry/api'
       - next
 
-  '@flags-sdk/vercel@1.2.1(flags@4.0.2(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))':
+  '@flags-sdk/vercel@1.2.1(flags@4.0.6(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))':
     dependencies:
-      '@vercel/flags-core': 1.3.1(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
-      flags: 4.0.2(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      '@vercel/flags-core': 1.3.1(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))
+      flags: 4.0.6(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
     transitivePeerDependencies:
       - '@aws-sdk/credential-provider-web-identity'
       - '@openfeature/server-sdk'
       - next
 
-  '@flags-sdk/vercel@1.2.1(flags@4.0.6(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))':
+  '@flags-sdk/vercel@1.2.1(flags@4.0.6(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))':
     dependencies:
-      '@vercel/flags-core': 1.3.1(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))
-      flags: 4.0.6(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
+      '@vercel/flags-core': 1.3.1(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
+      flags: 4.0.6(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
     transitivePeerDependencies:
       - '@aws-sdk/credential-provider-web-identity'
       - '@openfeature/server-sdk'
@@ -7879,33 +7839,6 @@ snapshots:
       mlly: 1.7.4
       rollup: 4.53.3
 
-  flags@3.2.0(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1):
-    dependencies:
-      '@edge-runtime/cookies': 5.0.2
-      jose: 5.10.0
-    optionalDependencies:
-      next: 16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
-      react: 19.2.1
-      react-dom: 19.2.0(react@19.2.1)
-
-  flags@4.0.2(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1):
-    dependencies:
-      '@edge-runtime/cookies': 5.0.2
-      jose: 5.10.0
-    optionalDependencies:
-      next: 16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
-      react: 19.2.1
-      react-dom: 19.2.0(react@19.2.1)
-
-  flags@4.0.2(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
-    dependencies:
-      '@edge-runtime/cookies': 5.0.2
-      jose: 5.10.0
-    optionalDependencies:
-      next: 16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
-      react: 19.2.1
-      react-dom: 19.2.1(react@19.2.1)
-
   flags@4.0.6(next@16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1))(react-dom@19.2.0(react@19.2.1))(react@19.2.1):
     dependencies:
       '@edge-runtime/cookies': 5.0.2
@@ -7914,6 +7847,15 @@ snapshots:
       next: 16.2.1(react-dom@19.2.0(react@19.2.1))(react@19.2.1)
       react: 19.2.1
       react-dom: 19.2.0(react@19.2.1)
+
+  flags@4.0.6(next@16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
+    dependencies:
+      '@edge-runtime/cookies': 5.0.2
+      jose: 5.10.0
+    optionalDependencies:
+      next: 16.2.1(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      react: 19.2.1
+      react-dom: 19.2.1(react@19.2.1)
 
   flatted@3.3.3: {}
 
