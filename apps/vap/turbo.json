@@ -3,7 +3,7 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "env": ["EDGE_CONFIG", "FLAGS"]
+      "env": ["EDGE_CONFIG", "FLAGS", "FLAGS_SECRET"]
     }
   }
 }
