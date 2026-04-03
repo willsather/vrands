@@ -12,6 +12,7 @@
     "mongodb": "turbo --filter @vrands/vongodb",
     "techcrunch": "turbo --filter @vrands/vechcrunch",
     "vermes": "turbo --filter @vrands/vermes",
+    "vap": "turbo --filter @vrands/vap",
     "site": "turbo --filter @vrands/site"
   },
   "devDependencies": {
