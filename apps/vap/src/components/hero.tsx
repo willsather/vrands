@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative h-[85vh] w-full overflow-hidden">
+    <div className="-mt-20 relative h-[85vh] w-full overflow-hidden">
       <video
         autoPlay
         muted

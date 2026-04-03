@@ -1,7 +1,13 @@
+import Image from "next/image";
+
 export function Logo() {
   return (
-    <span className="font-serif text-3xl font-bold tracking-tight text-black">
-      GAP
-    </span>
+    <Image
+      src="/logo-white-text.svg"
+      alt="Gap"
+      width={120}
+      height={80}
+      className="h-14 w-auto"
+    />
   );
 }

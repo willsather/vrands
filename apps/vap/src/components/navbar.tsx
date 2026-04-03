@@ -58,8 +58,8 @@ export default function Navbar() {
 
   return (
     <header>
-      <div className="sticky top-0 z-40 border-b border-gray-200 bg-white">
-        <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
+      <div className="relative z-40 bg-transparent pt-4">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
           {/* mobile controls */}
           <div className="flex w-24 items-center gap-3 md:hidden">
             <button
@@ -67,14 +67,14 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(true)}
               aria-label="Menu"
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6 text-white" />
             </button>
             <button
               type="button"
               onClick={toggleMobileSearch}
               aria-label="Search"
             >
-              <Search className="h-5 w-5" />
+              <Search className="h-5 w-5 text-white" />
             </button>
           </div>
 
@@ -94,7 +94,7 @@ export default function Navbar() {
               <Link
                 key={link}
                 href="#"
-                className="text-sm font-medium text-gray-800 transition-colors hover:text-black"
+                className="text-sm font-medium text-white transition-colors hover:text-white/80"
                 prefetch
               >
                 {link}
@@ -106,8 +106,8 @@ export default function Navbar() {
           <div
             className={`${isSearchFocused ? "flex" : "hidden md:flex"} w-full items-center md:w-56`}
           >
-            <div className="relative flex w-full items-center rounded-sm border border-gray-300 bg-gray-50 px-2">
-              <Search className="h-4 w-4 text-gray-400" />
+            <div className="relative flex w-full items-center rounded-sm border border-white/30 bg-white/10 px-2">
+              <Search className="h-4 w-4 text-white/60" />
               <Input
                 ref={searchInputRef}
                 type="text"
@@ -116,7 +116,7 @@ export default function Navbar() {
                 onFocus={() => setIsSearchFocused(true)}
                 onBlur={() => !isMobile && setIsSearchFocused(false)}
                 placeholder="Search"
-                className="border-none bg-transparent shadow-none focus-visible:outline-none focus-visible:ring-0"
+                className="border-none bg-transparent text-white placeholder:text-white/60 shadow-none focus-visible:outline-none focus-visible:ring-0"
               />
               {(isSearchFocused || searchValue) && (
                 <button
@@ -124,7 +124,7 @@ export default function Navbar() {
                   onClick={handleClearSearch}
                   aria-label="Clear search"
                 >
-                  <X className="h-4 w-4 text-gray-500" />
+                  <X className="h-4 w-4 text-white/60" />
                 </button>
               )}
             </div>

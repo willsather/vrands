@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Gap",
   description:
     "Shop Gap for casual women's, men's, maternity, baby & kids clothes. Browse the latest collections and find quality denim, tees, and more.",
+  icons: {
+    icon: "/blue-logo.svg",
+  },
 };
 
 export default function RootLayout({
