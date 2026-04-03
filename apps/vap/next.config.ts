@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
   experimental: {
     inlineCss: true,
   },
+  rewrites: async () => [
+    {
+      source: "/.well-known/vercel/flags",
+      destination: "/api/vercel/flags",
+    },
+  ],
   images: {
     remotePatterns: [
       {

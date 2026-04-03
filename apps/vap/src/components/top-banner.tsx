@@ -16,8 +16,10 @@ export default async function TopBanner() {
 
   if (isPromo) {
     return (
-      <div className="bg-[#111] px-4 py-2 text-center text-white text-xs tracking-wide">
-        Black Friday Sale: 20% all items, all stores, all day
+      <div className="bg-[#111] px-4 py-2">
+        <div className="mx-auto max-w-7xl text-white text-xs tracking-wide">
+          Black Friday Sale! 20% off. Everything. All day.
+        </div>
       </div>
     );
   }
