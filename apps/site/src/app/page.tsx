@@ -1,4 +1,5 @@
 import { BoseLogo } from "@/components/bose-logo";
+import { GapLogo } from "@/components/gap-logo";
 import { HermesLogo } from "@/components/hermes-logo";
 import { JetblueLogo } from "@/components/jetblue-logo";
 import { MongoDBLogo } from "@/components/mongodb-logo";
@@ -60,6 +61,18 @@ const sites = [
     technologies: [
       { icon: "/nextjs.svg" },
       { icon: "/blob.svg" },
+      { icon: "/edge.svg" },
+    ],
+  },
+  {
+    name: "Gap",
+    url: "https://vap.vercel.app",
+    description:
+      "Retail storefront with feature-flagged promo banners, video hero, Edge Config product catalog, and PPR product pages",
+    logo: GapLogo,
+    brandColor: "bg-[#002A5F]",
+    technologies: [
+      { icon: "/nextjs.svg" },
       { icon: "/edge.svg" },
     ],
   },
